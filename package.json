@@ -23,7 +23,12 @@
     "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "legacyDecorators": true
+      }
+    }
   },
   "browserslist": {
     "production": [

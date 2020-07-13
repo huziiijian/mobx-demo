@@ -1,15 +1,26 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { inject, observer } from 'mobx-react'
+import store from '../../store';
 
-export default class Home extends Component {
+@inject('store') @observer
+class Home extends React.Component {
 
   state = {
+  }
+
+  handleTodos = () => {
+    
   }
 
   render() {
     return (
       <div className='home'>
-        <h1>This is home!</h1>
+        <h1>Mobx</h1>
+        <div>{store.time}</div>
+        <button onClick={this.handleTodos}>增加一条任务</button>
       </div>
     )
   }
 }
+
+export default Home;
