@@ -16,11 +16,12 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "npm start": "react-app-rewired start",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
-     },
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
