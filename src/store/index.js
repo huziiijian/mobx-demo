@@ -1,3 +1,5 @@
+
+import React from 'react'
 import {
     observable,
     action,
@@ -5,11 +7,16 @@ import {
 } from 'mobx'
 import moment from 'moment'
 
-class AppStore {
+class AppStore extends React.Component {
     @observable time = '2019'
     @observable todos = []
     @computed get desc() {
-        return `${this.time} 还有 ${this.todos.length} 条任务待完成`
+        return (
+            <div>
+                <p>{this.time}</p>
+                <p>还有{this.todos.length} 条任务待完成</p>
+            </div>
+        )
     }
     @action addTodo(todo) {
         this.todos.push(todo)
