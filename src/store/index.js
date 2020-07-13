@@ -3,7 +3,7 @@ import {
     action,
     computed
 } from 'mobx'
-
+import moment from 'moment'
 
 class AppStore {
     @observable time = '2019'
@@ -20,9 +20,16 @@ class AppStore {
     @action resetTodo() {
         this.todos = []
     }
+    @action getNow() {
+        this.time = moment().format('YYYY-MM-DD HH:mm:ss')
+    }
 }
 
 
 const store = new AppStore()
+
+setInterval(() => {
+    store.getNow()
+}, 1000)
 
 export default store
